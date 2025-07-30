@@ -1,0 +1,31 @@
+{% extends 'auth/auth_base.html' %}
+
+{% block header %}
+  <h1>{% block title %}账户修改{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="form_center">
+<div class="login-card">
+  <form method="post">
+  <div class="input-group">
+    <label for="username">用户名: </label>
+    <input name="username" value="{{username }}" id="username" required>
+	</div>
+	<div class="input-group">
+    <label for="old_password">旧密码: </label>
+    <input type="password" name="old_password" id="old_password" required placeholder="必须输入原密码">
+	</div>
+	<div class="input-group">
+	<label for="new_password">新密码: </label>
+    <input type="password" name="new_password" id="new_password" placeholder="不修改密码请留空">
+	</div>
+	<div class="input-group">
+	<label for="captcha">验证码: </label>
+	<input name="captcha" id="captcha" required placeholder="点击图片可更换验证码">
+	</div>
+	<img id="captchaImage" src="" alt="验证码" width=120 height=50 onclick="get_captcha()" title="点击更换验证码">
+	<button class="submit" type="submit">修改</button>
+  </form>
+  </div></div>
+{% endblock %}

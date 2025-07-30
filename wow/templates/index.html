@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}服务器状态{% endblock %}</h1>
+  
+{% endblock %}
+
+{% block content %}
+<div>
+  数据服务器： <img src="{{url_for('static',filename='images/')}}{% if status.db %}on{% else %}off{% endif %}line.png" /> &nbsp;
+  登录服务器： <img src="{{url_for('static',filename='images/')}}{% if status.gate %}on{% else %}off{% endif %}line.png" /> &nbsp;
+  游戏服务器： <img src="{{url_for('static',filename='images/')}}{% if status.core %}on{% else %}off{% endif %}line.png" />
+</div>
+<div>在线人数：{{status.count}}</div>
+<div>游戏版本：{{status.ver}}</div>
+<div>客户端：<a href="{{status.client}}">下载</a></div>
+<div>登录器：<a href="{{status.logon}}">下载</a></div>
+{% endblock %}

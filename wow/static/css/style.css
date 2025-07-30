@@ -1,0 +1,245 @@
+@font-face {
+    font-family: 'OpenSansWeb';
+    src: url('../fonts/OpenSans-Regular.woff2') format('woff2'), url('../fonts/OpenSans-Regular.woff') format('woff');
+}
+
+*, body {
+    font-family: OpenSansWeb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /*background-image: url(https://api.masterking32.com/random_bg.php?wow); */
+	background-color: black;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+}
+
+.content_box1{
+    padding: 10px;
+    text-align: left;
+}
+
+.main-box {
+    width: 100%;
+    margin: 80px auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.box-form {
+    max-width: 80%;
+    margin: 10px auto 10px auto;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+}
+
+.login-form img {
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+.form-control {
+    margin: 5px 0px 10px 0px;
+}
+
+.input-group span {
+    padding-top: 10px;
+}
+
+nav > .nav.nav-tabs {
+    border: none;
+    color: #fff;
+    background: #272e38;
+    border-radius: 0;
+}
+
+nav > div a.nav-item.nav-link,
+nav > div a.nav-item.nav-link.active {
+    border: none;
+    padding: 18px 25px;
+    color: #fff;
+    background: #272e38;
+    border-radius: 0;
+}
+
+.tab-content {
+    
+    line-height: 25px;
+    border: 1px solid #ddd;
+    border-top: 5px solid #e74c3c;
+    border-bottom: 5px solid #e74c3c;
+    padding: 30px 25px;
+	min-height: calc(100vh - 450px);
+}
+
+#nav-topplayers button {
+    margin: 5px;
+}
+
+nav > div a.nav-item:hover {
+    border: none;
+    background: #a74c3c;
+    color: #fff;
+    border-radius: 0;
+    transition: background 0.20s linear;
+}
+
+nav > div a.nav-item.nav-link.active {
+	background:#e74c3c;
+}
+.flash {
+	margin: 1em 0; 
+	padding: 1em; 
+	background: #cae6f6; 
+	border: 1px solid #377ba8; 
+	color:red;
+}
+.nav2 { background-color: rgba(173,216,230,0.5); display: flex; justify-content: flex-end; align-items: center; padding: 0 0.5rem; }
+.nav2 h1 { flex: auto; margin: 0; }
+.nav2 h1 a { text-decoration: none; padding: 0.25rem 0.5rem; }
+.nav2 ul  { display: flex; list-style: none; margin: 0; padding: 0; }
+.nav2 ul li a, ul li span, header .action { display: block; padding: 0.5rem; }
+
+
+
+table {
+	width: 100%;      /* 表格宽度占满父容器 */
+	table-layout: auto; /* 列宽按内容自动分配（默认值） */
+	border-collapse: collapse; /* 可选：合并边框，使表格更紧凑 */
+}
+th, td {
+	padding: 8px;     /* 可选：单元格内边距 */
+	border: 1px solid #ddd; /* 可选：边框样式 */
+	text-align: center;      /* 水平居中 */
+	vertical-align: middle;  /* 垂直居中 */
+}
+
+.form_center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.login-card {
+
+	width: 100%;
+	max-width: 400px;
+	padding: 40px;
+
+}
+
+.login-card h2 {
+	color: #333;
+	margin-bottom: 30px;
+	font-weight: 600;
+	text-align: center;
+}
+
+.input-group {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.input-group label {
+	width: 80px; /* 固定标签宽度 */
+	color: #555;
+	font-weight: 500;
+	margin-right: 10px;
+}
+
+.input-group input {
+	flex: 1;
+	padding: 12px 15px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	font-size: 16px;
+	transition: border 0.3s;
+}
+
+.input-group input:focus {
+	border-color: #667eea;
+	outline: none;
+}
+
+.input-group2 input {
+	width: 100px;
+	margin-right: 5px;
+}
+
+.remember-forgot {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+	font-size: 14px;
+}
+
+.remember-forgot a {
+	color: #667eea;
+	text-decoration: none;
+}
+
+.remember-forgot a:hover {
+	text-decoration: underline;
+}
+
+button {
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.submit {
+	width: 100%;
+	padding: 12px;
+	margin-top:20px;
+	background: linear-gradient(to right, #667eea, #764ba2);
+	border: none;
+	color: white;
+	font-size: 16px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: opacity 0.3s;
+}
+
+
+button:hover {
+	opacity: 0.9;
+}
+
+.register-link {
+	margin-top: 20px;
+	font-size: 14px;
+	color: #666;
+	text-align: center;
+}
+
+.register-link a {
+	color: #667eea;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.register-link a:hover {
+	text-decoration: underline;
+}

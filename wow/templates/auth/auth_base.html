@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block nav2 %}
+<div class="nav2">
+  <ul>
+    {% if g.user %}
+      <li><span>欢迎 {{ g.user['username'] }}</span></li>
+	  <li><a href="{{ url_for('index.account_info') }}">账户查询</a></li>
+	  <li><a href="{{ url_for('auth.change_pass') }}">账户修改</a></li>
+      <li><a href="{{ url_for('auth.logout') }}">退出</a></li>
+    {% else %}
+      <li><a href="{{ url_for('auth.register') }}">注册</a></li>
+      <li><a href="{{ url_for('auth.login') }}">登录</a></li>
+	  
+    {% endif %}
+	  <li><span>|</span></li>
+	  {% if g.admin %}
+	  <li><a href="{{ url_for('auth.admin') }}">管理</a></li>
+	  <li><a href="{{ url_for('auth.admin_out') }}">退出</a></li>
+	  {% else %}
+	  <li><a href="{{ url_for('auth.admin') }}">登录管理员</a></li>
+	  {% endif %}
+  </ul>
+</div>
+{% endblock %}
+

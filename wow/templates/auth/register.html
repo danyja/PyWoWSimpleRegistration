@@ -1,0 +1,31 @@
+{% extends 'auth/auth_base.html' %}
+
+
+{% block header %}
+  <h1>{% block title %}用户注册{% endblock %}</h1>
+{% endblock %}
+
+
+{% block content %}
+<div class="form_center">
+<div class="login-card">
+  <form method="post">
+  <div class="input-group">
+    <label for="username">用户名: </label>
+    <input name="username" id="username" required  placeholder="只支持字母数字和下划线">
+	</div>
+	<div class="input-group">
+    <label for="password">密 码: </label>
+    <input type="password" name="password" id="password" required>
+	</div>
+	<div class="input-group">
+	<label for="captcha">验证码: </label>
+	<input name="captcha" id="captcha" required placeholder="点击图片可更换验证码">
+	</div>
+	<img id="captchaImage" src="" alt="验证码" width=120 height=50 onclick="get_captcha()" title="点击更换验证码">
+    <button class="submit" type="submit">注册</button>
+
+  </form>
+  </div>
+</div>
+{% endblock %}

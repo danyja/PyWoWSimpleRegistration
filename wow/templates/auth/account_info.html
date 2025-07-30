@@ -1,0 +1,32 @@
+{% extends 'auth/auth_base.html' %}
+
+{% block header %}
+  <h1>{% block title %}账户信息{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最后登录时间：{{logon}}</div>
+  <table border="0">
+  <tr>
+    <td>角色</td><td>种族</td><td>职业</td><td>状态</td>
+    <td>{% if tp!="等级" %}<a href="/top/level">等级</a>{% else %}等级{% endif %}</td>
+    <td>{% if tp!="财富" %}<a href="/top/money">财富</a>{% else %}财富{% endif %}</td>
+	<td>下线时间</td>
+	<td>{% if tp!="时长" %}<a href="/top/totaltime">总时长</a>{% else %}总时长{% endif %}</td>
+  </tr>
+  {% for r in result %}
+  
+   <tr>
+   <td>{{r["name"]}}</td>
+   <td><img src="{{url_for('static', filename='images/race/')}}{{r['race']}}.gif" title={{r["race_alt"]}} /></td>
+   <td><img src="{{url_for('static', filename='images/class/')}}{{r['class']}}.gif" title={{r["class_alt"]}} /></td>
+   <td><img src="{{url_for('static', filename='images/')}}{{r['online']}}line.png" title={{r["online_alt"]}} /></td>
+   <td>{{r["level"]}}</td>
+   <td>{{(r["money"]/10000) | int}}<img src="{{url_for('static', filename='images/money/gold.gif')}}"/>{{(r["money"]%10000/100)|int}}<img src="{{url_for('static', filename='images/money/silver.gif')}}"/>{{r["money"]%100}}<img src="{{url_for('static', filename='images/money/copper.gif')}}"/></td>
+   <td>{{r["logout_time"]}}</td>
+   <td>{{(r["totaltime"]/3600)|int}}:{{(r["totaltime"]%3600/60)|int}}:{{r["totaltime"]%60}}</td>
+   </tr>
+    
+  {% endfor %}
+  </table>
+{% endblock %}

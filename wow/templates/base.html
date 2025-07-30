@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<title>{% block title %}{% endblock %} - WOW</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+<body>
+<div class="container"><div class="row">
+    <div class="main-box">
+        <img src="{{ url_for('static', filename='images/wow-logo.png') }}">
+        <div class="col-xs-12" style="margin-top: 20px;">
+		<nav>
+			<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+				<a class="nav-item nav-link{% if nav.index %} active{% else %}{% endif %}" href="{{ url_for('index') }}">服务器状态</a>
+				<a class="nav-item nav-link{% if nav.top %} active{% else %}{% endif %}" href="{{ url_for('index.top') }}">英雄榜</a>
+				<a class="nav-item nav-link{% if nav.auth %} active{% else %}{% endif %}" href="{{ url_for('auth.login') }}">账户管理</a>
+			</div>
+		</nav>
+
+
+<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+
+    
+  </header>
+  {% block nav2 %}{% endblock %}
+  {% block header %}{% endblock %}
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}
+  
+  {% endblock %}
+</div>
+
+<script>
+
+function get_captcha(){
+	img=document.getElementById('captchaImage');
+	if(img){
+		// 获取验证码
+		fetch('/auth/captcha')
+			.then(response => response.json())
+			.then(data => {
+				//img=document.getElementById('captchaImage');
+				img.alt = data.status;
+				img.src = data.image;
+			});
+	}
+}
+
+get_captcha();
+
+  </script>
+</body>
+</html>

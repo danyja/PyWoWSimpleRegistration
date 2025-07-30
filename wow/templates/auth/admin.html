@@ -1,0 +1,99 @@
+{% extends 'auth/auth_base.html' %}
+
+{% block header %}
+  <h1>{% block title %}管理员{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+	{% if status %}
+<div class="form_center">
+<div class="login-card">
+  <form method="post">
+  <div class="input-group">
+    <label for="db">数据库: {{status.db.0}}</label>
+	<input type="hidden" name="server" value="db">
+	<input type="hidden" name="action" value={{status.db.1}}>
+	<input type="submit"  value={{status.db.2}}>
+	</div>
+  </form>
+  <form method="post">
+  <div class="input-group">
+    <label for="gate">登录器: {{status.gate.0}}</label>
+	<input type="hidden" name="server" value="gate">
+	<input type="hidden" name="action" value={{status.gate.1}}>
+	<input type="submit"  value={{status.gate.2}}>
+	</div>
+  </form>
+  <form method="post">
+  <div class="input-group">
+    <label for="core">主服务: {{status.core.0}}</label>
+	<input type="hidden" name="server" value="core">
+	<input type="hidden" name="action" value={{status.core.1}}>
+	<input type="submit"  value={{status.core.2}}>
+	</div>
+  </form>
+  <form method="post">
+  <h3>强制重置用户密码</h3>
+  <div class="input-group">
+  <label for="username">用户名: </label>
+    <input name="username" id="username" required>
+  </div>
+  <div class="input-group input-group2">
+    <label for="password">密 码: </label>
+    <input name="password" id="password" required>
+	<button type="button" id="generatePassword">随机</button>
+	</div>
+	<input type="hidden" name="action" value="change_pass">
+	<button class="submit" type="submit">修改</button>
+  </form>
+</div></div>
+  {% else %}
+<div class="form_center">
+<div class="login-card">
+  <form method="post">
+  <div class="input-group">
+    <label for="password">密 码: </label>
+	<input type="password" name="password" required>
+	</div>
+	<div class="input-group">
+	<label for="captcha">验证码: </label>
+	<input name="captcha" id="captcha" required placeholder="点击图片可更换验证码">
+	</div>
+	<img id="captchaImage" src="" alt="验证码" width=120 height=50 onclick="get_captcha()" title="点击更换验证码">
+	<button class="submit" type="submit">登录</button>
+
+  </form>
+</div></div>
+  {% endif %}
+<script>
+document.getElementById('generatePassword').addEventListener('click', function() {
+  const password = generateRandomPassword(6);
+  document.getElementById('password').value = password;
+});
+function generateRandomPassword(length) {
+  const lower = 'abcdefghijklmnopqrstuvwxyz';
+  //const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const numbers = '0123456789';
+  //const symbols = '!@#$%^&*()_+-=[]{}|;:,.<>?';
+  
+  // 确保密码包含每种类型的字符
+  let password = [
+    lower[Math.floor(Math.random() * lower.length)],
+    //upper[Math.floor(Math.random() * upper.length)],
+    numbers[Math.floor(Math.random() * numbers.length)],
+    //symbols[Math.floor(Math.random() * symbols.length)]
+  ].join('');
+  
+  // 填充剩余长度
+  //const allChars = lower + upper + numbers + symbols;
+  const allChars = lower + numbers;
+  for (let i = password.length; i < length; i++) {
+    password += allChars[Math.floor(Math.random() * allChars.length)];
+  }
+  
+  // 打乱字符顺序
+  return password.split('').sort(() => 0.5 - Math.random()).join('');
+}
+</script>
+
+{% endblock %}

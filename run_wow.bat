@@ -1,0 +1,1 @@
+venv\Scripts\python.exe -m flask --app wow run  --host 0.0.0.0
