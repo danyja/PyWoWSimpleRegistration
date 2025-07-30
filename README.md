@@ -5,7 +5,7 @@ Referred to [WoWSimpleRegistration](https://github.com/masterking32/WoWSimpleReg
 
 Only tested with the [cllassic](https://github.com/cmangos/mangos-classic) version on Windows. 
 
-#How to use
+# How to use
 1. install python, better >3.10.  
 安装python，建议大于3.10。
 
