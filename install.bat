@@ -31,12 +31,12 @@ for /f "tokens=*" %%v in ('"%python_path%" --version 2^>^&1') do (
     set "python_version=%%v"
 )
 
-:: Check if Python version ¡İ 3.10
+:: Check if Python version >=3.10
 echo Detected Python version: %python_version%
 python -c "import sys; exit(0 if sys.version_info >= (3, 10) else 1)" && (
-    echo Python version meets ¡İ 3.10 requirement
+    echo Python version meets >= 3.10 requirement
 ) || (
-    echo Error: Python ¡İ 3.10 is required
+    echo Error: Python >= 3.10 is required
     pause
     exit /b 1
 )
