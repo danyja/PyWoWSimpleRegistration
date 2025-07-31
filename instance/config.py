@@ -40,7 +40,7 @@ SERVERS = {
     },
 }
 
-# 管理员登录的salt和verifier,请使用auth_tools.py计算
+# 管理员登录的salt和verifier,请使用auth_tools.py计算,用户名为admin
 # 需要使用虚拟环境运行：venv\Scripts\python.exe wow\auth_tools.py
 ADMIN_S = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ADMIN_V = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
