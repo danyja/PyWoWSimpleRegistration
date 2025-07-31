@@ -7,7 +7,7 @@ Only tested with the [cllassic](https://github.com/cmangos/mangos-classic) versi
 
 # How to use
 1. install python, better >3.10.  
-安装python，建议大于3.10。
+安装python，建议大于3.10。请设置pip国内源。
 
 2. clone the code or download as zip then unzip it.  
 克隆代码或下载为zip包并解压。
