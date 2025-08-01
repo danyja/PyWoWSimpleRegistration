@@ -213,7 +213,7 @@ button {
 	width: 100%;
 	padding: 12px;
 	margin-top:20px;
-	background: linear-gradient(to right, #667eea, #764ba2);
+	background-color: #e74c3c;
 	border: none;
 	color: white;
 	font-size: 16px;

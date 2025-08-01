@@ -30,12 +30,10 @@ def index():
     nav = {"index": True}
     return render_template("index.html", status=status, nav=nav)
 
-
-@bp.route("/test")
-def test():
-    return render_template("wow.html")
-
-
+@bp.route("/favicon.ico")
+def get_logo():
+    return current_app.send_static_file("favicon.ico")
+    
 @bp.route("/top", defaults={"tp": "level", "qty": 50})
 @bp.route("/top/<tp>", defaults={"qty": 50})
 @bp.route("/top/<tp>/<int:qty>")
