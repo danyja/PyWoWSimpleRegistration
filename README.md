@@ -23,21 +23,22 @@ Only tested with the [cllassic](https://github.com/cmangos/mangos-classic) versi
 
 
 # Apache + mod-wsgi反代
-安装Apache和mod_wsgi  
-运行 mode_wsgi-express module-config，将显示内容添加到Apache配置文件中。  
-配置虚拟主机将所有访问定向到main.wsgi  
+1. 安装Apache和mod_wsgi (需要编译安装，这里附带一个我安装过的whl包，venv\Scripts\pip install mod_wsgi-5.0.2-cp310-cp310-win_amd64.whl)  
+2. 运行 venv\Scripts\mode_wsgi-express module-config，将显示内容添加到Apache配置文件中。  
+3. 配置虚拟主机将所有访问定向到main.wsgi  
 
-以下共参考：
+以下供参考：
 ```
 Listen 5000
+
 LoadFile "C:/Software/Python310/python310.dll"
 LoadModule wsgi_module "D:/PyWoWSimpleRegistration/venv/lib/site-packages/mod_wsgi/server/mod_wsgi.cp310-win_amd64.pyd"
 WSGIPythonHome "D:/PyWoWSimpleRegistration/venv"
 
 <VirtualHost *:5000>
-	WSGIScriptAlias / "D:/PyWoWSimpleRegistration/main.wsgi"
-	<Directory "D:/PyWoWSimpleRegistration/">
-		Require all granted
-	</Directory>
+    WSGIScriptAlias / "D:/PyWoWSimpleRegistration/main.wsgi"
+    <Directory "D:/PyWoWSimpleRegistration/">
+        Require all granted
+    </Directory>
 </VirtualHost>
 ```
