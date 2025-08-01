@@ -18,5 +18,5 @@ Only tested with the [cllassic](https://github.com/cmangos/mangos-classic) versi
 4. edit the "config.py" in instance folder.  
 修改instance文件夹下的“config.py”
 
-5. run the "run_wow.bat" and access "http://localhost:5000"  
-运行“run_wow.bat”脚本，浏览器访问“http://localhost:5000”。
+5. run the "run_wow.bat" and access "http://localhost:5000". Note: If you want to publish to the public network, please use Ngix or Apache reverse proxy.  
+运行“run_wow.bat”脚本，浏览器访问“http://localhost:5000”。注意：如果要发布到公网，请使用Ngix或Apache反向代理。
