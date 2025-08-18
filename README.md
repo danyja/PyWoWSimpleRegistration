@@ -15,8 +15,8 @@ Only tested with the [cllassic](https://github.com/cmangos/mangos-classic) versi
 3. run the "install.bat" script to install the venv.  
 运行“install.bat”脚本安装虚拟环境。注意中文版有GB2312和utf8两种编码，如果乱码，请换一个试试。
 
-4. edit the "config.py" in instance folder.  
-修改instance文件夹下的“config.py”
+4. rename the  to "config.py" in instance folder and eidt the content.  
+将instance文件夹下的"config.py.template"重命名为“config.py”并修改内容。
 
 5. run the "run_wow.bat" and access "http://localhost:5000". Note: If you want to publish to the public network, please use Ngix or Apache reverse proxy.  
 运行“run_wow.bat”脚本，浏览器访问“http://localhost:5000”。 注意：如果要发布到公网，请使用Ngix或Apache反向代理。
